@@ -28,6 +28,6 @@ password.addEventListener(
 button.addEventListener(
   'click',
   () => {
-    window.print();1
+    window.print();
   },
 );
