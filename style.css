@@ -1,0 +1,102 @@
+body {
+  height: 100vh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+form {
+  border: dashed 2px #d1d5db;
+  padding: .5rem 2rem;
+  font: 16px sans-serif;
+  /* Make form a flex container to center the card content */
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
+
+/* Style the printable card content for the screen */
+.printable-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+/* Tambahkan sedikit jarak di bawah QR Code */
+.printable-card h2 {
+  margin-top: 1rem; 
+}
+
+
+.internal {
+  display: flex;
+  gap: 2rem;
+}
+
+.inputs {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  color: #374151;
+  font-family: monospace;
+  height: 38px;
+  padding: 0 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 0.25rem;
+}
+
+button {
+  height: 2.5rem;
+  background-color: #0ea5e9;
+  color: #fff;
+  border-radius: 0.25rem;
+  border: none;
+  font-size: 1rem;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+/* === PRINT STYLES: HIDE INPUTS, STYLE CARD === */
+@media print {
+  /* Hide the inputs, button, and instructions */
+  .input-controls {
+    display: none;
+  }
+  
+  /* Remove the form border and padding for a clean card print */
+  form {
+    border: none;
+    padding: 0;
+    /* Center the printed content on the page */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  /* Add a border to the printable card itself for a 'card' look */
+  .printable-card {
+    border: 2px solid #000;
+    padding: 1rem;
+  }
+
+  /* Style the SSID to look good on the card */
+  .printable-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    margin-top: 1rem; /* Pastikan jarak ini juga ada saat dicetak */
+  }
+}
